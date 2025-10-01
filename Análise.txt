@@ -1,0 +1,35 @@
+ANALISTA DE SISTEMAS
+O dono de um  loja precisa de um sistema web
+para cadastrar seus clientes(nome,email,senha)
+mas para cadastrar é preciso realizar um login
+com email e senha e ter acesso a tela cadastro,
+após cadastrar é possivel alterar e exlcuir(apresentar
+uma mensagem se realmente deseja apagar)
+
+BANCO DE DADOS
+Criar o banco de dados chamado bdloja
+criar as tabelas usuario(email,senha), e cliente(nome,email,senha)
+realizar as consultas nas tabelas
+inserir dados do admin na tabela usuario;
+
+PROTÓTIPO
+Criar com ferramentas como figma, corel entre outros e aprensetar
+para ser aprovado.
+
+DESENVOLVIMENTO
+
+desenvolver utilizando a IDE visual studio 2022 e MYSQLWorkbench
+
+TESTES
+Ao finalizar o desenvolvimento  realizar vários testes de validação 
+e lógica para que o cliente se sinta seguro ao utilizar.
+
+HOMOLOGAÇÃO
+o cliente testa a aplicação e coloca em produção para todos utilizar
+
+VERSIONAMENTO
+utilizar o GIT BASH E GITHUB, CRIAR O ARQUIVO .gitignore e
+pegar as informaçãoes no gitignore.io
+
+
+
