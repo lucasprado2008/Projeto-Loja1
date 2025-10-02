@@ -5,7 +5,7 @@ using ProjetoLoja.Repositorio;
 // DEFINE O NOME E ONDE A CLASSE ESTÁ LOCALIZADA, NAMESPACE AJUDA A ORGANIZAR O CÓDIGO E EVITAR CONFLITOS DE NOMES
 namespace ProjetoLoja.Controllers
 {
-    // CLASSE USUARIO CONTROLLER QUE ESTÁ HERDANDO DA CLASSE CONTROLLER
+    // CLASSE USUARIOCONTROLLER QUE ESTÁ HERDANDO DA CLASSE CONTROLLER
     public class UsuarioController : Controller
     {
         // DECLARA UMA VARIÁVEL PRIVADA, SOMENTE LEITURA DO TIPO UsuarioRepositorio CHAMADA (INSTANCIAR) _usuarioRepositorio
@@ -19,6 +19,7 @@ namespace ProjetoLoja.Controllers
         }
 
         // INTERFACE É UMA REPRESENTAÇÃO DO RESULTADO (TELA)
+        [HttpGet]
         public IActionResult Login()
         {
             // RETORNA A PÁGINA LOGIN
