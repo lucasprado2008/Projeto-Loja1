@@ -31,7 +31,7 @@ namespace ProjetoLoja.Controllers
         public IActionResult Login(String email, String senha)
         {
             var Usuario = _usuarioRepositorio.ObterUsuario(email);
-            if (Usuario != null && Usuario.senha != senha)
+            if (Usuario != null && Usuario.Senha != senha)
             {
                 return RedirectToAction("Index", "Cliente");
             }
