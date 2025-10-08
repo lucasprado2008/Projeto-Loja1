@@ -31,9 +31,10 @@ namespace ProjetoLoja.Controllers
         public IActionResult Login(String email, String senha)
         {
             var Usuario = _usuarioRepositorio.ObterUsuario(email);
-            if (Usuario != null && Usuario.Senha != senha)
+            if (Usuario != null && Usuario.Senha == senha)
+             //senha = Senha do banco; Senha = Senha do Input
             {
-                return RedirectToAction("Index", "Cliente");
+                return RedirectToAction("Index","Home");
             }
             ModelState.AddModelError("", "Email / Senha inválidos");
 

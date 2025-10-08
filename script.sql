@@ -22,3 +22,5 @@ emailCli varchar(40) not null
 -- CONSULTANDO AS TABELAS DO BANCO
 SELECT * FROM Usuario;
 SELECT * FROM Cliente;
+
+INSERT INTO Usuario(nome,email, senha) values ("admin","admin@email.com", 123456);

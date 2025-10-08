@@ -3,7 +3,7 @@ using ProjetoLoja.Models;
 using System.Data;
 namespace ProjetoLoja.Repositorio
 {
-    public class UsuarioRepositorio(IConfiguration configuration)
+    public class UsuarioRepositorio(IConfiguration configuration)  
     {
         // Declara um campo privado somente leitura para armazenar a string de conexão com o MySQL.
         private readonly string _conexaoMySQL = configuration.GetConnectionString("ConexaoMySQL");
@@ -13,7 +13,7 @@ namespace ProjetoLoja.Repositorio
             // Cria uma nova instância da conexão MySQL dentro de um bloco 'using'.
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
-                // Abre a conexão com o banco de dados MySQL.
+                // Abre a conexão com o banco de dados MySQL.   
                 conexao.Open();
                 // Cria um novo comando SQL para selecionar todos os campos da tabela 'Usuario' onde o campo 'Email' corresponde ao parâmetro fornecido.
                 MySqlCommand cmd = new("SELECT * FROM Usuario WHERE Email = @email", conexao);
