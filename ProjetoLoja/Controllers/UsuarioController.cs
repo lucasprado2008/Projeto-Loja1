@@ -41,5 +41,24 @@ namespace ProjetoLoja.Controllers
             // RETORNA A PÁGINA LOGIN
             return View();
         }
+        // Cadastro
+
+        //[HttpGet] Pega os dados do servidor
+        public IActionResult Cadastro()
+        {
+            return View();
+        }
+
+        //Requisição para enviar os dados para o servidor
+        [HttpPost]
+        public IActionResult Cadastro(Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                _usuarioRepositorio.AdicionarUsuario(usuario);
+                return RedirectToAction("Login");
+            }
+            return View();
+        }
     }
 }

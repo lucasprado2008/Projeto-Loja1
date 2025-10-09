@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel;
+using MySql.Data.MySqlClient;
 using ProjetoLoja.Models;
 using System.Data;
 namespace ProjetoLoja.Repositorio
@@ -8,6 +9,29 @@ namespace ProjetoLoja.Repositorio
         // Declara um campo privado somente leitura para armazenar a string de conexão com o MySQL.
         private readonly string _conexaoMySQL = configuration.GetConnectionString("ConexaoMySQL");
 
+        // Método para cadastrar usuário.
+        public void AdicionarUsuario(Usuario usuario)
+        {
+            using(var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                //Abrindo a conexão com o banco de dados
+                conexao.Open();
+                //Cria uma variável que vai receber o método criar comando
+                var cmd = conexao.CreateCommand();
+                //Cria um novo comando MySQL para inserir os dados na tabela Usuario.
+                cmd.CommandText = ("INSERT INTO Usuario (email, senha) VALUES (@email, @senha)");
+                //Adiciona o parâmetro para o email e define seu tipo
+                cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = usuario.Email;
+                //Adiciona o parâmetro para a senha e define seu tipo
+                cmd.Parameters.Add("@senha", MySqlDbType.VarChar).Value = usuario.Senha;
+                //Executa o comando SQL e insere os dados e retorna as linhas afetadas.
+                cmd.ExecuteNonQuery();
+                //Fecha a conexão com o banco de dados
+                conexao.Close();
+            }
+        }
+
+        // Método para buscar todos os usuários
         public Usuario ObterUsuario(string email)
         {
             // Cria uma nova instância da conexão MySQL dentro de um bloco 'using'.
@@ -20,8 +44,8 @@ namespace ProjetoLoja.Repositorio
                 // Adiciona um parâmetro ao comando SQL para o campo 'Email', especificando o tipo como VarChar e utilizando o valor do parâmetro 'email'.
                 cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = email;
 
-                // Executa o comando SQL SELECT e obtém um leitor de dados (MySqlDataReader). O CommandBehavior.CloseConnection garante que a conexão
-                // será fechada automaticamente quando o leitor for fechado.
+                /* Executa o comando SQL SELECT e obtém um leitor de dados (MySqlDataReader). O CommandBehavior.CloseConnection garante que a conexão
+                será fechada automaticamente quando o leitor for fechado.*/
                 using (MySqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection))
                 {
                     // Inicializa uma variável 'usuario' como null. Ela será preenchida se um usuário for encontrado.
