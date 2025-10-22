@@ -1,13 +1,28 @@
-﻿<h1>Login</h1>
+﻿<link href="~/css/estilo.css" rel="stylesheet" />
+<form asp-action="Login" method="post" class="login-form">
 
-<form asp-action="Login" method="post">
-    <div>
+    <h1 class="login-title">Login</h1>
+
+    <div class="form-group">
         <label>Email:</label>
-        <input type="email" name="email" required />
+        <input type="email" name="email" required class="form-control"/>
     </div>
-    <div>
+    <div class="form-group">
         <label>Senha:</label>
-        <input type="password" name="senha" required />
+        <input type="password" name="senha" required class="form-control"/>
     </div>
-    <button type="submit">Login</button>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col btn btn-primary">
+                Opção 1
+            </div>
+            <div class="col btn btn-secondary">
+                Opção 2
+            </div>
+            <div class="col btn btn-dark">
+                Opção 3
+            </div>
+        </div>
+    </div>
 </form>
