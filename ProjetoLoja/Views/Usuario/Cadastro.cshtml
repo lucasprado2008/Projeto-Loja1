@@ -4,15 +4,17 @@
     ViewData["Title"] = "Cadastro";
 }
 
-<form asp-action="Cadastro" method="post">
-    <h1>Cadastrar Usuário</h1>
-    <div>
+<link href="~/css/cadastro.css" rel="stylesheet" />
+
+<form asp-action="Cadastro" method="post" class="cad-form">
+    <h1 class="cad-title">Cadastrar Usuário</h1>
+    <div class="form-group">
         <label>Email</label>
-        <input type="email" name="email" required />
+        <input type="email" name="email" required class="form-control" placeholder="Insira seu email aqui" autofocus />
     </div>
-    <div>
+    <div class="form-group">
         <label>Senha</label>
-        <input type="password" name="senha" required />
+        <input type="password" name="senha" required class="form-control" placeholder="Insira sua senha aqui"/>
     </div>
-    <button>Cadastrar</button>
+    <button class="btn-cad">Cadastrar</button>
 </form>

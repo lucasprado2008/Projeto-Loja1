@@ -8,10 +8,6 @@
 }
 
 .form-group{
-    margin-bottom:15px;
-}
-
-.form-group{
     display:block;
     margin-bottom:10px;
     font-weight:700;
@@ -19,19 +15,19 @@
 
 .login-title{
     text-align:center;
-    color:blue;
+    color:gray;
     margin-bottom:20px;
 }
 
 .form-control{
     width:100%;
     padding:10px;
-    border:1px solid blue;
+    border:1px solid silver;
     box-sizing:border-box;
 }
 
 .btn-primary{
-    background-image:linear-gradient(to right,purple,aqua);
+    background-image:linear-gradient(to right,gray,slategray);
     color:white;
     padding:10px 15px;
     border:none;
@@ -43,6 +39,5 @@
 }
 
 .btn-primary:hover{
-    background-image:linear-gradient(to right,aqua,purple);
     transform:scale(1.1);
 }
